@@ -13,7 +13,7 @@ pipeline {
                 branch 'master'
             }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'lightsail', usernameVariable: 'USERNAME', keyVariable: 'KEY')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'lightsail', usernameVariable: 'USERNAME', keyFileVariable: 'KEY')]) {
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
