@@ -14,7 +14,7 @@ pipeline {
             }
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'lightsail', usernameVariable: 'USERNAME', keyFileVariable: 'KEY')]) {
-                    echo "$KEY"
+                    sh 'ls'
                     sshPublisher(
                         failOnError: true,
                         continueOnError: false,
